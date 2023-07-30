@@ -1,0 +1,11 @@
+<h1>List of all movies</h1>
+
+<% Movie.all.each do |display| %>
+  <ul>
+    <li> <%= display.title%> </li>
+    <li> <%= display.year%></li>
+    <li> <%= display.duration%></li>
+    <li> <%= display.image%></li>
+    <li> <%= display.director_id%></li>
+  </ul>
+<% end %>

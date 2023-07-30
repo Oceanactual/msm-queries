@@ -1,0 +1,10 @@
+<h1>List of all actors</h1>
+
+<% Actor.all.each do |display| %>
+  <ul>
+    <li> <%= display.name%> </li>
+    <li> <%= display.dob%></li>
+    <li> <%= display.bio%></li>
+    <li> <%= display.id%></li>
+  </ul>
+<% end %>
