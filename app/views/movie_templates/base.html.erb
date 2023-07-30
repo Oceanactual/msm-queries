@@ -1,11 +1,22 @@
 <h1>List of all movies</h1>
 
-<% Movie.all.each do |display| %>
-  <ul>
-    <li> <%= display.title%> </li>
-    <li> <%= display.year%></li>
-    <li> <%= display.duration%></li>
-    <li> <%= display.image%></li>
-    <li> <%= display.director_id%></li>
-  </ul>
+<table border ="1">
+  <tr>
+    <td>id</td>
+    <td>image</td>
+    <td>title</td>
+    <td>year</td>
+    <td>name</td>
+    <td></td>
+  </tr>
+<% @list_of_movies.each do |display| %>
+  <tr>
+    <td> <%= display.id%> </td>
+    <td> <img src="http://robohash.org/<%= display.title%>"></td>
+    <td> <%= display.title%></td>
+    <td> <%= display.year%></td>
+    <td> <%= Director.all.where({:id => display.director_id}).first.name%></td>
+    <td> <a href="/movies/<%=display.id%>">Show details</a>
+  </tr>
 <% end %>
+</table>

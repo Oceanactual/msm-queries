@@ -1,0 +1,22 @@
+<h1>Movie #<%= @background_movie.id%> details</h1>
+
+<a href="/movies">Go back</a>
+<hr>
+ <dl>
+  <dt>Title</dt>
+  <dd><%=@background_movie.title%></dd>
+  <dt>Year</dt>
+  <dd><%=@background_movie.year%></dd>
+  <dt>Duration</dt>
+  <dd><%=@background_movie.duration%></dd>
+  <dt>Director</dt>
+  <dd><%= Director.all.where({:id => @background_movie.director_id}).first.name%></dd>
+  <dt>Description</dt>
+  <dd><%=@background_movie.description%></dd>
+  <dt>Image</dt>
+  <dd><img src="http://robohash.org/<%= @background_movie.title%>"></td></dd>
+  <dt>Bio</dt>
+  <dd><%=time_ago_in_words(@background_movie.created_at)%></dd>
+  <dt>Bio</dt>
+  <dd><%=time_ago_in_words(@background_movie.updated_at)%></dd>
+</dl>
